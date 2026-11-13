@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Playverse – Free multiplayer games to play with friends</title>
+<meta name="description" content="Playverse is a studio of fast, free multiplayer games: hand cricket, word mysteries, board battles and more. Create a room, share the code and play with friends on separate phones in seconds.">
+<link rel="canonical" href="https://playversegames.github.io/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#6c5cff">
+<meta name="google-site-verification" content="wSRQUKkHX9Q7EJh863jL0ODmH-tWQrU3Wd1RhTcSKds" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎮%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Playverse">
+<meta property="og:title" content="Playverse – Free multiplayer games to play with friends">
+<meta property="og:description" content="Playverse is a studio of fast, free multiplayer games: hand cricket, word mysteries, board battles and more. Create a room, share the code and play with friends on separate phones in seconds.">
+<meta property="og:url" content="https://playversegames.github.io/">
+<meta property="og:image" content="https://playversegames.github.io/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Playverse – Free multiplayer games to play with friends">
+<meta name="twitter:description" content="Playverse is a studio of fast, free multiplayer games: hand cricket, word mysteries, board battles and more. Create a room, share the code and play with friends on separate phones in seconds.">
+<meta name="twitter:image" content="https://playversegames.github.io/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Playverse","url":"https://playversegames.github.io/","description":"Playverse is a studio of fast, free multiplayer games: hand cricket, word mysteries, board battles and more. Create a room, share the code and play with friends on separate phones in seconds."}</script>
+<style>
+:root{--bg:#f4f5ff;--card:#fff;--ink:#14142b;--mut:#5d5f80;--line:#dcdef5;--acc:#6c5cff;--acc2:#ff5c9d;--glow:rgba(108,92,255,.25);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b1a;--card:#15152b;--ink:#f1f1ff;--mut:#9a9cc4;--line:#262647;--glow:rgba(108,92,255,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0b1a;--card:#15152b;--ink:#f1f1ff;--mut:#9a9cc4;--line:#262647;--glow:rgba(108,92,255,.4);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:.55;z-index:0;animation:float 14s ease-in-out infinite;pointer-events:none}
+.o1{width:320px;height:320px;background:var(--acc);top:-80px;left:-80px}
+.o2{width:280px;height:280px;background:var(--acc2);bottom:-60px;right:-60px;animation-delay:-6s}
+@keyframes float{50%{transform:translate(40px,30px) scale(1.15)}}
+main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:18px 18px 40px}
+nav{display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:800;letter-spacing:.5px;font-size:20px}
+.brand b{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tbtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:15px;cursor:pointer}
+.hero{text-align:center;padding:44px 0 28px}
+.logo{font-size:clamp(46px,13vw,92px);font-weight:900;line-height:1;margin:0;background:linear-gradient(90deg,var(--acc),var(--acc2),var(--acc));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite;filter:drop-shadow(0 8px 30px var(--glow))}
+@keyframes shine{to{background-position:200% center}}
+.tag{margin:14px 0 8px;font-size:18px;font-weight:600}
+.desc{max-width:560px;margin:0 auto;color:var(--mut);line-height:1.6;font-size:15px}
+.cta{margin-top:26px}
+.gbtn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#222;border:0;border-radius:999px;padding:13px 24px;font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 6px 24px var(--glow);transition:transform .15s}
+.gbtn:active{transform:scale(.96)}
+.gbtn svg{width:20px;height:20px}
+.hint{display:block;margin-top:10px;font-size:12px;color:var(--mut)}
+.who{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;font-size:14px}
+.who img{width:30px;height:30px;border-radius:50%;background:var(--line)}
+.who button{background:none;border:0;color:var(--acc2);cursor:pointer;font-size:14px}
+h2{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--mut);margin:34px 0 14px}
+.row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;-webkit-overflow-scrolling:touch}
+.row::-webkit-scrollbar{height:6px}.row::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+.g{flex:0 0 190px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s;display:block}
+.g:hover{transform:translateY(-6px);box-shadow:0 14px 34px var(--glow)}
+.art{height:120px;display:grid;place-items:center;font-size:52px}
+.info{padding:12px 14px 16px}
+.info b{display:block;font-size:16px}
+.info span{font-size:12.5px;color:var(--mut);line-height:1.4;display:block;margin-top:4px}
+.play{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--acc),var(--acc2));padding:6px 14px;border-radius:999px}
+.g.soon{cursor:default;opacity:.8;border-style:dashed}
+.g.soon:hover{transform:none;box-shadow:none}
+.g.soon .art{filter:grayscale(.7)}
+.badge{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--mut);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.lock{display:none}
+body.out .gamesec{display:none}
+body.in .cta{display:none}
+body.in .gamesec{display:block}
+footer{text-align:center;color:var(--mut);font-size:12px;margin-top:30px}
+</style>
+</head>
+<body class="out">
+<div class="orb o1"></div><div class="orb o2"></div>
+<main>
+<nav><div class="brand">Play<b>verse</b></div><button class="tbtn" id="tbtn" aria-label="Toggle theme">🌙</button></nav>
+<section class="hero">
+<h1 class="logo">PLAYVERSE</h1>
+<p class="tag">One universe. Endless games with friends.</p>
+<p class="desc">Playverse is a studio of fast, friendly multiplayer games — cricket, word mysteries, board battles and more. Create a room, share the code, and play together on separate phones in seconds.</p>
+<div class="cta">
+<button class="gbtn" id="signin"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6C12.3 13.5 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.4 28.7a14.5 14.5 0 0 1 0-9.4l-7.8-6A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2.1 1.4-4.700 2.300-7.700 2.300-6.300 0-11.700-4-13.600-9.700l-7.800 6C6.500 42.600 14.600 48 24 48z"/></svg>Sign in with Google</button>
+<span class="hint" id="hint">Sign in to unlock all games</span>
+</div>
+<div class="who" id="who" style="display:none"><img id="av" alt=""><span id="nm"></span><button id="out">Sign out</button></div>
+</section>
+
+<section class="gamesec">
+<h2>Play now</h2>
+<div class="row" id="games"></div>
+</section>
+<section>
+<h2>Coming soon</h2>
+<div class="row" id="soon"></div>
+</section>
+<footer>© Playverse · Made for friends</footer>
+</main>
+
+<script>
+/* ===== EDIT THESE ===== */
+const BASE = "https://playversegames.github.io/";
+/* Add a new game = add one line. Add a "coming soon" card = add one line to SOON. */
+const GAMES = [
+ {n:"Cricket Rush",d:"Head-tail hand cricket, tournaments & teams",e:"🏏",c:["#11998e","#38ef7d"],u:"cricket-rush/"},
+ {n:"Clue Rush",d:"Guess the clue before time runs out",e:"🔎",c:["#f7971e","#ffd200"],u:"clue-rush/"},
+ {n:"Last Light",d:"Survive the dark together",e:"🔦",c:["#232526","#6a6a8e"],u:"last-light/"},
+ {n:"Sub Heist",d:"Sneak, dive and steal the loot",e:"🚤",c:["#2193b0","#6dd5ed"],u:"sub-heist/"},
+ {n:"Drop Four",d:"Connect four online with a friend",e:"🔴",c:["#cb2d3e","#ef473a"],u:"drop-four/"},
+ {n:"X-O Duel",d:"Best of 3 tic-tac-toe showdown",e:"⭕",c:["#8e2de2","#4a00e0"],u:"xo-duel/"},
+ {n:"Snake.io",d:"Grow long, turn smooth, stay alive",e:"🐍",c:["#56ab2f","#a8e063"],u:"snake-io/"}
+];
+const SOON = [
+ {n:"Coming soon",d:"A new game is on the way",e:"❓"},
+ {n:"Coming soon",d:"A new game is on the way",e:"✨"},
+ {n:"Coming soon",d:"A new game is on the way",e:"🎮"}
+];
+/* ====================== */
+const $=id=>document.getElementById(id), root=document.documentElement;
+
+/* Theme: shared across all games via localStorage "pv-theme" */
+function setTheme(t){root.dataset.theme=t;try{localStorage.setItem("pv-theme",t)}catch(e){}$("tbtn").textContent=t==="dark"?"☀️":"🌙"}
+let saved=null;try{saved=localStorage.getItem("pv-theme")}catch(e){}
+setTheme(saved||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));
+$("tbtn").onclick=()=>setTheme(root.dataset.theme==="dark"?"light":"dark");
+
+function card(g,soon){
+ const a=document.createElement(soon?"div":"a");a.className="g"+(soon?" soon":"");
+ if(!soon)a.href=BASE+g.u;
+ const bg=soon?"linear-gradient(135deg,var(--line),var(--card))":`linear-gradient(135deg,${g.c[0]},${g.c[1]})`;
+ a.innerHTML=`<div class="art" style="background:${bg}">${g.e}</div><div class="info"><b>${g.n}</b><span>${g.d}</span>${soon?'<em class="badge">Stay tuned</em>':'<em class="play">Play ▶</em>'}</div>`;
+ return a;
+}
+GAMES.forEach(g=>$("games").append(card(g)));
+SOON.forEach(g=>$("soon").append(card(g,1)));
+
+function show(u){
+ document.body.className=u?"in":"out";
+ $("who").style.display=u?"flex":"none";
+ if(u){$("nm").textContent="Hi, "+(u.displayName||"Player");$("av").src=u.photoURL||""}
+}
+</script>
+<script type="module">
+import{initializeApp}from"https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+import{getAuth,GoogleAuthProvider,signInWithPopup,signInWithRedirect,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+const app=initializeApp({apiKey:"AIzaSyDHcp44KXR6Gax_Vf3fwdinWBgJB4l_92Y",authDomain:"clue-rush-a7bbe.firebaseapp.com",projectId:"clue-rush-a7bbe",storageBucket:"clue-rush-a7bbe.firebasestorage.app",messagingSenderId:"439710542707",appId:"1:439710542707:web:b55e0a8f2c309b86e8b306"}),auth=getAuth(app);
+const hint=document.getElementById("hint");
+onAuthStateChanged(auth,u=>show(u&&!u.isAnonymous?u:null));
+document.getElementById("signin").onclick=async()=>{const pr=new GoogleAuthProvider();hint.textContent="Opening Google…";
+ try{await signInWithPopup(auth,pr)}catch(e){const c=e&&e.code;
+  if(c==="auth/popup-blocked"||c==="auth/operation-not-supported-in-this-environment")signInWithRedirect(auth,pr);
+  else hint.textContent=(c==="auth/popup-closed-by-user"||c==="auth/cancelled-popup-request")?"Sign in to unlock all games":"Sign-in failed. Please try again."}};
+document.getElementById("out").onclick=()=>signOut(auth);
+</script>
+</body>
+</html>
