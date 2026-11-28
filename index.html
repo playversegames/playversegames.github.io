@@ -21,6 +21,7 @@
 <meta name="twitter:description" content="Playverse is a studio of fast, free multiplayer games: hand cricket, word mysteries, board battles and more. Create a room, share the code and play with friends on separate phones in seconds.">
 <meta name="twitter:image" content="https://playversegames.github.io/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Playverse","url":"https://playversegames.github.io/","description":"Playverse is a studio of fast, free multiplayer games: hand cricket, word mysteries, board battles and more. Create a room, share the code and play with friends on separate phones in seconds."}</script>
+<script>(function(){try{var t=localStorage.getItem("pv-theme");if(!t)t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",t)}catch(e){}})()</script>
 <style>
 :root{--bg:#f4f5ff;--card:#fff;--ink:#14142b;--mut:#5d5f80;--line:#dcdef5;--acc:#6c5cff;--acc2:#ff5c9d;--glow:rgba(108,92,255,.25);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b1a;--card:#15152b;--ink:#f1f1ff;--mut:#9a9cc4;--line:#262647;--glow:rgba(108,92,255,.4);color-scheme:dark}}
@@ -36,6 +37,8 @@ main{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:18px 18p
 nav{display:flex;justify-content:space-between;align-items:center}
 .brand{font-weight:800;letter-spacing:.5px;font-size:20px}
 .brand b{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tbtn,.gbtn,.who button,.g,.dc-btn,.footcopy{-webkit-tap-highlight-color:transparent}
+.tbtn:focus-visible,.gbtn:focus-visible,.who button:focus-visible,.g:focus-visible,.footcopy:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 .tbtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:15px;cursor:pointer}
 .hero{text-align:center;padding:44px 0 28px}
 .logo{font-size:clamp(46px,13vw,92px);font-weight:900;line-height:1;margin:0;background:linear-gradient(90deg,var(--acc),var(--acc2),var(--acc));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite;filter:drop-shadow(0 8px 30px var(--glow))}
@@ -45,11 +48,12 @@ nav{display:flex;justify-content:space-between;align-items:center}
 .cta{margin-top:26px}
 .gbtn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#222;border:0;border-radius:999px;padding:13px 24px;font-size:16px;font-weight:600;cursor:pointer;box-shadow:0 6px 24px var(--glow);transition:transform .15s}
 .gbtn:active{transform:scale(.96)}
+.gbtn:disabled{opacity:.7;cursor:wait}
 .gbtn svg{width:20px;height:20px}
 .hint{display:block;margin-top:10px;font-size:12px;color:var(--mut)}
 .who{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;font-size:14px}
 .who img{width:30px;height:30px;border-radius:50%;background:var(--line)}
-.who button{background:none;border:0;color:var(--acc2);cursor:pointer;font-size:14px}
+.who button{background:none;border:0;color:var(--acc2);cursor:pointer;font-size:14px;padding:8px 10px;border-radius:8px}
 h2{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--mut);margin:34px 0 14px}
 .row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;-webkit-overflow-scrolling:touch}
 .row::-webkit-scrollbar{height:6px}.row::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
@@ -59,15 +63,17 @@ h2{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--mut);m
 .info{padding:12px 14px 16px}
 .info b{display:block;font-size:16px}
 .info span{font-size:12.5px;color:var(--mut);line-height:1.4;display:block;margin-top:4px}
-.play{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--acc),var(--acc2));padding:6px 14px;border-radius:999px}
+.play{font-style:normal;display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:#fff;background:linear-gradient(90deg,var(--acc),var(--acc2));padding:6px 14px;border-radius:999px}
 .g.soon{cursor:default;opacity:.8;border-style:dashed}
 .g.soon:hover{transform:none;box-shadow:none}
 .g.soon .art{filter:grayscale(.7)}
-.badge{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--mut);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.badge{font-style:normal;display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--mut);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
 .lock{display:none}
-body.out .gamesec{display:none}
 body.in .cta{display:none}
-body.in .gamesec{display:block}
+.hint.pulse{animation:pulse .6s}
+@keyframes pulse{30%{transform:scale(1.12);color:var(--acc)}}
+.footcopy{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-decoration:underline;font-weight:700}
+.err{color:#e5484d}
 footer{text-align:center;color:var(--mut);font-size:12px;margin-top:30px}
 .dc{display:flex;align-items:center;gap:20px;margin:34px 0 0;padding:22px 24px;background:var(--card);border:1px solid var(--line);border-radius:22px;text-align:left;position:relative;overflow:hidden;box-shadow:0 10px 30px var(--glow)}
 .dc::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 170px at 0% 0%,rgba(88,101,242,.16),transparent 70%);pointer-events:none}
@@ -85,6 +91,7 @@ footer{text-align:center;color:var(--mut);font-size:12px;margin-top:30px}
 .dc-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(88,101,242,.6)}
 .dc-btn:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
 .dc-btn svg{width:20px;height:20px;fill:currentColor}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media (max-width:640px){.dc{flex-wrap:wrap;padding:20px}.dc-btn{width:100%;justify-content:center}}
 </style>
 </head>
@@ -100,12 +107,13 @@ footer{text-align:center;color:var(--mut);font-size:12px;margin-top:30px}
 <button class="gbtn" id="signin"><svg viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.8 6C12.3 13.5 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.5-4.8 7.2l7.5 5.8c4.4-4.1 7.1-10.1 7.1-17.5z"/><path fill="#FBBC05" d="M10.4 28.7a14.5 14.5 0 0 1 0-9.4l-7.8-6A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.8l7.8-6.1z"/><path fill="#34A853" d="M24 48c6.2 0 11.4-2 15.2-5.5l-7.5-5.8c-2.1 1.4-4.700 2.300-7.700 2.300-6.300 0-11.700-4-13.600-9.700l-7.800 6C6.500 42.600 14.600 48 24 48z"/></svg>Sign in with Google</button>
 <span class="hint" id="hint">Sign in to unlock all games</span>
 </div>
-<div class="who" id="who" style="display:none"><img id="av" alt=""><span id="nm"></span><button id="out">Sign out</button></div>
+<div class="who" id="who" style="display:none"><img id="av" alt="" width="30" height="30"><span id="nm"></span><button id="out">Sign out</button></div>
 </section>
 
-<section class="gamesec">
+<section class="gamesec" id="gamesec">
 <h2>Play now</h2>
 <div class="row" id="games"></div>
+<noscript><p class="desc">Turn on JavaScript to see the games. Direct links: <a href="cricket-rush/">Cricket Rush</a>, <a href="clue-rush/">Clue Rush</a>, <a href="time-snap/">Time Snap</a>, <a href="last-light/">Last Light</a>, <a href="sub-heist/">Sub Heist</a>, <a href="drop-four/">Drop Four</a>, <a href="xo-duel/">X-O Duel</a>, <a href="slither-rush/">Slither Rush</a>.</p></noscript>
 </section>
 <section>
 <h2>Coming soon</h2>
@@ -122,7 +130,7 @@ footer{text-align:center;color:var(--mut);font-size:12px;margin-top:30px}
 </div>
 <a class="dc-btn" href="https://discord.gg/QmFJFek86z" target="_blank" rel="noopener" aria-label="Join the Playverse Discord server"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#dc-logo"/></svg>Enter the Lobby</a>
 </section>
-<footer>© Playverse · Made for friends · <a href="privacy.html" style="color:inherit">Privacy</a><br><span>🐞 Found a bug? Message us on Discord: <b data-copy="dryer0531" style="cursor:pointer;text-decoration:underline">dryer0531</b> <span class="cxcp"></span></span></footer>
+<footer>© Playverse · Made for friends · <a href="privacy.html" style="color:inherit">Privacy</a><br><span>🐞 Found a bug? Message us on Discord: <button type="button" class="footcopy" data-copy="dryer0531" aria-label="Copy Discord username dryer0531">dryer0531</button> <span class="cxcp" role="status" aria-live="polite"></span></span></footer>
 </main>
 
 <script>
@@ -146,16 +154,18 @@ const SOON = [
 ];
 /* ====================== */
 const $=id=>document.getElementById(id), root=document.documentElement;
+let signedIn=false;
 
 /* Theme: shared across all games via localStorage "pv-theme" */
 function setTheme(t){root.dataset.theme=t;try{localStorage.setItem("pv-theme",t)}catch(e){}$("tbtn").textContent=t==="dark"?"☀️":"🌙"}
 let saved=null;try{saved=localStorage.getItem("pv-theme")}catch(e){}
 setTheme(saved||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"));
 $("tbtn").onclick=()=>setTheme(root.dataset.theme==="dark"?"light":"dark");
+$("signin").onclick=()=>{$("hint").textContent="Sign-in could not load. Check your connection and reload the page."};
 
 function card(g,soon){
  const a=document.createElement(soon?"div":"a");a.className="g"+(soon?" soon":"");
- if(!soon)a.href=BASE+g.u;
+ if(!soon){a.href=BASE+g.u;a.onclick=e=>{if(!signedIn){e.preventDefault();const h=$("hint");h.textContent="Sign in with Google to play";h.classList.remove("pulse");void h.offsetWidth;h.classList.add("pulse");$("signin").focus();$("signin").scrollIntoView({block:"center",behavior:"smooth"})}}}
  const bg=soon?"linear-gradient(135deg,var(--line),var(--card))":`linear-gradient(135deg,${g.c[0]},${g.c[1]})`;
  a.innerHTML=`<div class="art" style="background:${bg}">${g.e}</div><div class="info"><b>${g.n}</b><span>${g.d}</span>${soon?'<em class="badge">Stay tuned</em>':'<em class="play">Play ▶</em>'}</div>`;
  return a;
@@ -164,23 +174,29 @@ GAMES.forEach(g=>$("games").append(card(g)));
 SOON.forEach(g=>$("soon").append(card(g,1)));
 
 function show(u){
+ signedIn=!!u;
  document.body.className=u?"in":"out";
  $("who").style.display=u?"flex":"none";
- if(u){$("nm").textContent="Hi, "+(u.displayName||"Player");$("av").src=u.photoURL||""}
+ if(u){$("nm").textContent="Hi, "+(u.displayName||"Player");if(u.photoURL)$("av").src=u.photoURL;else $("av").removeAttribute("src")}
+ else{$("nm").textContent="";$("av").removeAttribute("src");$("hint").textContent="Sign in to unlock all games";$("hint").classList.remove("err");$("signin").disabled=false}
 }
 </script>
 <script type="module">
 import{initializeApp}from"https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-import{getAuth,GoogleAuthProvider,signInWithPopup,signInWithRedirect,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
+import{getAuth,GoogleAuthProvider,signInWithPopup,signInWithRedirect,getRedirectResult,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
 const app=initializeApp({apiKey:"AIzaSyDHcp44KXR6Gax_Vf3fwdinWBgJB4l_92Y",authDomain:"clue-rush-a7bbe.firebaseapp.com",projectId:"clue-rush-a7bbe",storageBucket:"clue-rush-a7bbe.firebasestorage.app",messagingSenderId:"439710542707",appId:"1:439710542707:web:b55e0a8f2c309b86e8b306"}),auth=getAuth(app);
 const hint=document.getElementById("hint");
-onAuthStateChanged(auth,u=>{const ok=u&&!u.isAnonymous;if(ok){const n=new URLSearchParams(location.search).get("next");if(n&&/^\/[^\/\\]/.test(n)){location.replace(n);return}}show(ok?u:null)});
-document.getElementById("signin").onclick=async()=>{const pr=new GoogleAuthProvider();hint.textContent="Opening Google…";
+const fail=m=>{hint.textContent=m;hint.classList.add("err");document.getElementById("signin").disabled=false};
+const safeNext=n=>{if(!n)return null;try{const u=new URL(n,location.origin);if(u.origin!==location.origin||!u.pathname.startsWith("/")||u.pathname.startsWith("//"))return null;return u.pathname+u.search+u.hash}catch(e){return null}};
+onAuthStateChanged(auth,u=>{const ok=u&&!u.isAnonymous;if(ok){const n=safeNext(new URLSearchParams(location.search).get("next"));if(n){location.replace(n);return}}show(ok?u:null)});
+getRedirectResult(auth).catch(()=>fail("Sign-in failed. Please try again."));
+document.getElementById("signin").onclick=async()=>{const btn=document.getElementById("signin"),pr=new GoogleAuthProvider();btn.disabled=true;hint.classList.remove("err");hint.textContent="Opening Google…";
  try{await signInWithPopup(auth,pr)}catch(e){const c=e&&e.code;
-  if(c==="auth/popup-blocked"||c==="auth/operation-not-supported-in-this-environment")signInWithRedirect(auth,pr);
-  else hint.textContent=(c==="auth/popup-closed-by-user"||c==="auth/cancelled-popup-request")?"Sign in to unlock all games":"Sign-in failed. Please try again."}};
-document.getElementById("out").onclick=()=>signOut(auth);
+  if(c==="auth/popup-blocked"||c==="auth/operation-not-supported-in-this-environment"){try{await signInWithRedirect(auth,pr)}catch(e2){fail("Sign-in failed. Please try again.")}}
+  else if(c==="auth/popup-closed-by-user"||c==="auth/cancelled-popup-request"){hint.textContent="Sign in to unlock all games";btn.disabled=false}
+  else fail("Sign-in failed. Please try again.")}};
+document.getElementById("out").onclick=()=>signOut(auth).catch(()=>{});
 </script>
-<script>document.addEventListener("click",function(e){var b=e.target.closest("[data-copy]");if(!b)return;var t=b.dataset.copy,s=b.parentNode.querySelector(".cxcp");function ok(){if(s){s.textContent="(copied ✓)";setTimeout(function(){s.textContent=""},2000)}}try{navigator.clipboard.writeText(t).then(ok,ok)}catch(x){ok()}});</script>
+<script>document.addEventListener("click",function(e){var b=e.target.closest("[data-copy]");if(!b)return;var t=b.dataset.copy,s=b.parentNode.querySelector(".cxcp");function say(m){if(s){s.textContent=m;setTimeout(function(){s.textContent=""},2000)}}function ok(){say("(copied ✓)")}function no(){say("(copy failed, please type it)")}try{navigator.clipboard.writeText(t).then(ok,no)}catch(x){no()}});</script>
 </body>
 </html>
